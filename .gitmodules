@@ -1,6 +1,3 @@
-[submodule "www/kirby"]
-	path = www/kirby
-	url = git@github.com:getkirby/kirby.git
 [submodule "src/plugins/patterns"]
 	path = src/plugins/patterns
 	url = git@github.com:getkirby-plugins/patterns-plugin.git
@@ -21,7 +18,7 @@
 	url = git@github.com:ian-cox/Kirby-MinifyHTML.git
 [submodule "src/plugins/sitemap"]
 	path = src/plugins/sitemap
-	url = https://github.com/jpangborn/kirby-sitemap.git
+	url = git@github.com:jpangborn/kirby-sitemap.git
 [submodule "src/content"]
 	path = src/content
 	url = git@github.com:bradshawsguide/content.git
@@ -30,7 +27,7 @@
 	url = git@github.com:texnixe/kirby-csv-handler.git
 [submodule "src/plugins/kirby-sri"]
 	path = src/plugins/kirby-sri
-	url = https://github.com/S1SYPHOS/kirby-sri.git
+	url = git@github.com:S1SYPHOS/kirby-sri.git
 [submodule "src/patterns"]
 	path = src/patterns
 	url = git@github.com:bradshawsguide/patterns.git
