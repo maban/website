@@ -1,7 +1,7 @@
 <?php
 snippet('head');
 
-pattern('common/header', [
+snippet('common/header', [
     'title' => $page->title(),
     'modifiers' => ['index']
 ]);
@@ -9,7 +9,7 @@ pattern('common/header', [
 $companies = $page->children()->sortBy('title', 'asc');
 
 foreach (alphabetise($companies) as $letter => $items) {
-    pattern('common/index', [
+    snippet('common/index', [
         'items' => $items,
         'letter' => $letter
     ]);

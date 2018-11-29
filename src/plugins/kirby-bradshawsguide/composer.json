@@ -1,0 +1,13 @@
+{
+  "name": "bradshawsguide/kirby",
+  "description": "A Kirby 3 plugin to support the development of Bradshaw’s Guide",
+  "version": "0.0.1",
+  "type": "kirby-plugin",
+  "autoload": {
+    "files": ["config.php"]
+  },
+  "authors": [{
+    "name": "Paul Robert Lloyd",
+    "email": "noreply@paulrobertlloyd.com"
+  }]
+}

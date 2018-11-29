@@ -1,0 +1,9 @@
+title: Homepage
+sections:
+  featured:
+    type: fields
+    fields:
+      feature:
+        label: Featured places
+        type: pages
+        max: 6

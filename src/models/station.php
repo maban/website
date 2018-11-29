@@ -1,7 +1,24 @@
 <?php
 
-class StationPage extends Page
+class StationPage extends Kirby\Cms\Page
 {
+    public function writeContent(array $data, string $languageCode = null): bool
+    {
+        unset($data['title']);
+
+        if ($station = Db::first('stations', '*', ['uid' => $this->uid()])) {
+            return Db::update('stations', $data, ['uid' => $this->uid()]);
+        } else {
+            $data['uid'] = $this->uid();
+            return Db::insert('stations', $data);
+        }
+    }
+
+    public function delete(bool $force = false): bool
+    {
+        return Db::delete('stations', ['uid' => $this->uid()]);
+    }
+
     // Location
     public function location()
     {
@@ -16,8 +33,8 @@ class StationPage extends Page
     // Trainline slug
     public function trainline()
     {
-        if (!$this->subtitle()->empty()) {
-            $trainline = str::slug($this->subtitle());
+        if ($this->subtitle()->isNotEmpty()) {
+            $trainline = Str::slug($this->subtitle());
         } else {
             $trainline = $this->uid();
         }
@@ -28,14 +45,11 @@ class StationPage extends Page
     // API consistency
     public function links()
     {
-        $links = array(
-            'wikipedia' => (!$this->wikipedia()->empty()) ?
-                '- (wikipedia: '.urlencode($this->wikipedia()).')' : '',
-            'trainline' => (!$this->nationalrail()->empty()) ?
-                '- (trainline: '.$this->trainline().')' : '',
-            'disused' => (!$this->disused()->empty()) ?
-                '- (disused: '.$this->disused().')' : '',
-        );
+        $links = [
+            'wikipedia' => $this->wikipedia()->isEmpty() ? null : '- (wikipedia: '.urlencode($this->wikipedia()).')',
+            'trainline' => $this->nationalrail()->isEmpty() ? null : '- (trainline: '.$this->trainline().')',
+            'disused' => $this->disused()->isEmpty() ? null : '- (disused: '.$this->disused().')',
+        ];
 
         return implode("\n", $links);
     }
@@ -43,15 +57,16 @@ class StationPage extends Page
     // Convert UIDs listed under `route:` to array of pages
     public function routes()
     {
-        $routes = page('routes')->children()->filterBy('stops', '*=', $this->uid());
-
-        return $routes;
+        // TODO: Update filter to only find routes by exact station UID in
+        // array of station UIDs. Currently Brighton and Albrighton are
+        // returned as being one in the same.
+        return page('routes')->children()->filterBy('stops', '*=', $this->uid());
     }
 
     public function routesCount()
     {
         $number = new NumberFormatter("en", NumberFormatter::SPELLOUT);
-        $routes = count($this->routes());
+        $routes = size($this->routes());
 
         if ($routes > 1) {
             $routesCount = $number->format($routes).' routes';
@@ -60,14 +75,5 @@ class StationPage extends Page
         }
 
         return $routesCount;
-    }
-
-    // Return corresponding `PlacePage` if exists, else return `StationPage`
-    public function placePage()
-    {
-        if (!$this->place()->empty()) {
-            return page('places/'.$this->country().DS.$this->region().DS.$this->place());
-            ;
-        }
     }
 }

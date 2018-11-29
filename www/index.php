@@ -1,15 +1,18 @@
 <?php
 
-define('DS', DIRECTORY_SEPARATOR);
+include 'kirby/bootstrap.php';
 
-// Load kirby
-require(__DIR__.DS.'kirby'.DS.'bootstrap.php');
+$kirby = new Kirby([
+    'roots' => [
+        'index' => __DIR__,
+        'sessions' => __DIR__ . '/accounts',
+        'cache' => __DIR__ . '/cache',
+        'sessions' => __DIR__ . '/sessions',
+        'root' => $root = dirname(__DIR__),
+        'site' => $root . '/src',
+        'content' => $root . '/src/content',
+        'snippets' => $root . '/src/patterns'
+    ]
+]);
 
-// Configure folder locations
-$kirby = kirby();
-$kirby->roots->site = '../src';
-$kirby->roots->content = '../src/content';
-$kirby->roots->cache = $kirby->roots()->index().DS.'cache';
-
-// Render
-echo $kirby->launch();
+echo $kirby->render();

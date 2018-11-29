@@ -1,8 +1,11 @@
 .DS_Store
 /etc/ssl/
+/src/accounts/
 /www/.well-known/
 /www/assets/
 /www/cache/
-/www/thumbs/
+/www/media/
+/www/sessions/
 node_modules
 *.cache
+*.license

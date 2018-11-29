@@ -2,6 +2,7 @@
 
 // Redirect
 $view = (get('view') == true) ? get('view') : 'list';
+$section = $pages->find('sections')->children()->findById(param('section'));
 
 if (param('section') == null) {
     go($page->uri().'/section:1?view='.$view);
@@ -16,31 +17,45 @@ snippet('head', [
     'alternate' => $page->url().'.geojson'.'/section:'.param('section')
 ]);
 
-pattern('common/header', [
+snippet('common/header', [
     'title' => $page->title(),
     'modifiers' => ['index']
 ]);
 
-pattern('common/tablist', [
-    'currentURL' => '/routes/section:'.param('section')
+snippet('common/tablist', [
+    'title' => 'Sections',
+    'paramName' => 'section',
+    'currentURL' => '/routes/section:'.param('section'),
+    'tabs' => $site->find('sections')->children()
 ]);
 
-pattern('common/page/content', [
+snippet('common/page/content', [
+    'content' => $section->text(),
     'proseModifiers' => ['centered'],
     'editable' => false
 ]);
 
-if (count($routes)) {
-    pattern('common/switch');
+if (size($routes)) {
+    snippet('common/switch', [
+        'title' => 'Change view',
+        'queryName' => 'view',
+        'switches' => [[
+            'label' => 'List view',
+            'uid' => 'list'
+        ],[
+            'label' => 'Map view',
+            'uid' => 'map'
+        ]]
+    ]);
 
     if (get('view') == 'map') {
-        pattern('common/map', [
-            'url' => $page->uri().'.geojson/'.$kirby->request()->params(),
+        snippet('common/map', [
+            'url' => $page->uri().'.geojson/'.$kirby->request()->url()->params(),
             'title' => 'Routes plotted on a map',
             'modifiers' => ['cover']
         ]);
     } else {
-        pattern('common/section/list', [
+        snippet('common/section/list', [
             'title' => 'Featured routes',
             'items' => $featured->filterBy('section', param('section')),
             'component' => 'common/feature',
@@ -50,9 +65,9 @@ if (count($routes)) {
         foreach ($companies as $company) {
             $items = $company->routes()->filterBy('section', param('section'));
 
-            if (count($items)) {
-                pattern('common/section/list', [
-                    'title' => html::a($company->url(), $company->title()),
+            if (size($items)) {
+                snippet('common/section/list', [
+                    'title' => Html::a($company->url(), $company->title()),
                     'items' => $items,
                     'component' => 'common/route-item'
                 ]);

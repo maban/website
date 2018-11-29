@@ -6,8 +6,8 @@ return function ($site, $pages, $page) {
 
     // Routes
     $routes = page('routes')->children()->visible();
-    $featured = $routes->filter(function ($page) {
-        return $page->hasImages();
+    $featured = $routes->filter(function ($route) {
+        return $route->hasImages();
     });
 
     if ($param = param('section')) {

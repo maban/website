@@ -6,7 +6,7 @@
     <body>
         <div id="map" data-zoom="<?= get('zoom') ?>"></div>
         <script>
-            map('#map','<?= url(kirby()->request()->query()->geojson()) ?>');
+            map('#map','<?= url(get('geojson')) ?>');
         </script>
     </body>
 </html>

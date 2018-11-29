@@ -1,0 +1,34 @@
+title: Place
+columns:
+  - width: 2/3
+    sections:
+      images:
+        headline: Cover image
+        type: files
+        layout: cards
+        text: false
+        info: "{{ file.caption.kt }}"
+        max: 1
+        image:
+          cover: true
+          ratio: 16/9
+      content:
+        extends: sections/content
+  - width: 1/3
+    sections:
+      info:
+        type: fields
+        fields:
+          notes:
+            label: Notes
+            type: textarea
+          info:
+            label: Info
+            type: structure
+            fields:
+              term:
+                label: Term
+                type: text
+              desc:
+                label: Description
+                type: text

@@ -3,28 +3,28 @@ snippet('head', [
     'alternate' => $page->url().'.geojson'
 ]);
 
-pattern('common/traverse');
+snippet('common/traverse');
 
-if (!$page->stops()->empty()) {
-    pattern('common/map', [
+if ($page->stops()->isNotEmpty()) {
+    snippet('common/map', [
         'url' => $page->uri().'.geojson/',
         'title' => 'Map of this route',
         'modifiers' => ['cover']
     ]);
 }
 
-pattern('common/header', [
+snippet('common/header', [
     'parent' => $page->operator(),
     'title' => $page->title(),
-    'subtitle' => $page->subtitle()
+    'subtitle' => $page->subtitle()->isNotEmpty() ? $page->subtitle() : null
 ]);
 
-pattern('common/page/content', [
+snippet('common/page/content', [
     'proseModifiers' => ['route']
 ]);
 
-if (!$page->links()->empty()) {
-    pattern('common/section/text', [
+if ($page->links()->isNotEmpty()) {
+    snippet('common/section/text', [
         'title' => 'Further reading',
         'text' => $page->links()
     ]);

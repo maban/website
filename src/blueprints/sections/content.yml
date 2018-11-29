@@ -1,0 +1,8 @@
+type: fields
+fields:
+  desc:
+    label: Description
+    type: textarea
+  text:
+    label: Content
+    type: textarea
