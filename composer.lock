@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1619e815b4356c21fca3f3b1f00543dc",
+    "content-hash": "8aeb9660141e1f4d92255665e09c7586",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -578,6 +578,39 @@
                 "psr-3"
             ],
             "time": "2018-11-20T15:27:04+00:00"
+        },
+        {
+            "name": "sylvainjule/locator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sylvainjule/kirby-locator.git",
+                "reference": "772abba48d391415748857c12a0aa047f10fbb79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sylvainjule/kirby-locator/zipball/772abba48d391415748857c12a0aa047f10fbb79",
+                "reference": "772abba48d391415748857c12a0aa047f10fbb79",
+                "shasum": ""
+            },
+            "type": "kirby-plugin",
+            "autoload": {
+                "files": [
+                    "config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sylvain Julé",
+                    "email": "contact@sylvain-jule.fr"
+                }
+            ],
+            "description": "A map & geolocation field, built on top of open-source services / Mapbox",
+            "time": "2018-11-29T06:51:06+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",

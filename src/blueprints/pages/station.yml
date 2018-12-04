@@ -41,6 +41,16 @@ columns:
       related:
         type: fields
         fields:
+          location:
+            label: Location
+            type: locator
+            tiles: voyager
+            center:
+              lat: 51.5
+              lon: 0
+            display:
+              - lat
+              - lon
           nationalrail:
             label: National Rail station code
             type: text

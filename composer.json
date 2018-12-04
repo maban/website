@@ -24,6 +24,7 @@
     "url": "https://github.com/k-next/kirby"
   }],
   "require": {
-    "getkirby/cms": "dev-develop"
+    "getkirby/cms": "dev-develop",
+    "sylvainjule/locator": "^1.0"
   }
 }
