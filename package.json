@@ -1,6 +1,6 @@
 {
   "name": "bradshawsguide",
-  "version": "0.1.0",
+  "version": "3.0.0-beta",
   "private": true,
   "description": "Bradshaw's Guide for Tourists in Great Britain & Ireland",
   "keywords": [
@@ -9,13 +9,17 @@
     "travel"
   ],
   "homepage": "https://bradshaws.guide",
-  "bugs": "https://github.com/paulrobertlloyd/bradshawsguide/issues",
-  "license": "SEE LICENSE IN LICENSE",
-  "author": "Paul Robert Lloyd",
+  "license": "MIT",
+  "author": {
+    "name": "Paul Robert Lloyd",
+    "email": "noreply@paulrobertlloyd.com",
+    "url": "https://paulrobertlloyd.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/paulrobertlloyd/bradshawsguide.git"
   },
+  "bugs": "https://github.com/paulrobertlloyd/bradshawsguide/issues",
   "scripts": {
     "prestart": "npm install",
     "start": "gulp start",

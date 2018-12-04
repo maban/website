@@ -14,6 +14,3 @@
 [submodule "src/patterns"]
 	path = src/patterns
 	url = git@github.com:bradshawsguide/patterns.git
-[submodule "www/kirby"]
-	path = www/kirby
-	url = git@github.com:k-next/kirby.git

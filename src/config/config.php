@@ -22,14 +22,14 @@ return [
     'routes' => [[
         'pattern' => 'app.webmanifest',
         'action' => function () {
-            return tpl::load(kirby()->roots()->templates().DS.'app.webmanifest.php', [
+            return tpl::load(kirby()->root('templates').'/app.webmanifest.php', [
                 'site' => kirby()->site()
             ]);
         }
     ],[
         'pattern' => 'map',
         'action' => function () {
-            return tpl::load(kirby()->roots()->templates().DS.'map.php', [], false);
+            return tpl::load(kirby()->root('templates').'/map.php', [], false);
         }
     ],[
         'pattern' => 'robots.txt',

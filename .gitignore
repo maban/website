@@ -1,6 +1,6 @@
-.DS_Store
 /etc/ssl/
 /src/accounts/
+/vendor/
 /www/.well-known/
 /www/assets/
 /www/cache/
