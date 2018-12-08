@@ -5,9 +5,6 @@
 	path = src/plugins/kirbytextraw
 	url = git@github.com:jbeyerstedt/kirby-plugin-kirbytextRaw
   branch = kirby3
-[submodule "src/plugins/sitemap"]
-	path = src/plugins/sitemap
-	url = git@github.com:jpangborn/kirby-sitemap.git
 [submodule "src/content"]
 	path = src/content
 	url = git@github.com:bradshawsguide/content.git

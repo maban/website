@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8aeb9660141e1f4d92255665e09c7586",
+    "content-hash": "6b4d0269db1e068754585c9eaa0894da",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -204,16 +204,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/k-next/kirby.git",
-                "reference": "90ecfe13698a034ff956aa8bd885022d2e1321c0"
+                "reference": "41f5a7f6c3edc08a8d22aeb0fb8c522010c3c433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/k-next/kirby/zipball/90ecfe13698a034ff956aa8bd885022d2e1321c0",
-                "reference": "90ecfe13698a034ff956aa8bd885022d2e1321c0",
+                "url": "https://api.github.com/repos/k-next/kirby/zipball/41f5a7f6c3edc08a8d22aeb0fb8c522010c3c433",
+                "reference": "41f5a7f6c3edc08a8d22aeb0fb8c522010c3c433",
                 "shasum": ""
             },
             "archive": {
@@ -310,7 +310,7 @@
                 "forum": "https://forum.getkirby.com",
                 "source": "https://github.com/getkirby/kirby"
             },
-            "time": "2018-12-03T16:19:50+00:00"
+            "time": "2018-12-07T16:29:16+00:00"
         },
         {
             "name": "league/color-extractor",
@@ -467,6 +467,64 @@
             "time": "2017-02-24T16:06:33+00:00"
         },
         {
+            "name": "omz13/kirby3-xmlsitemap",
+            "version": "0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omz13/kirby3-xmlsitemap.git",
+                "reference": "f78217d33382d5e2a995b2684b940f612cd71ddd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omz13/kirby3-xmlsitemap/zipball/f78217d33382d5e2a995b2684b940f612cd71ddd",
+                "reference": "f78217d33382d5e2a995b2684b940f612cd71ddd",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": "dev-master as 3.0.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "liip/rmt": "^1.4",
+                "localheinz/composer-normalize": "^0.8.0",
+                "omz13/omz13-coding-standard": "dev-master",
+                "phpcompatibility/php-compatibility": "^8.2",
+                "phpmd/phpmd": "^2.6",
+                "phpstan/phpstan": "^0.10.3",
+                "phpstan/phpstan-strict-rules": "^0.10.1",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omz13\\": "src/"
+                },
+                "files": [
+                    "src/config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Somers",
+                    "email": "dsomers@omz13.com",
+                    "homepage": "https://meldingstuff.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "kirby3 plugin to generate an xml-based sitemap",
+            "keywords": [
+                "Sitemap",
+                "kirby3",
+                "plugin"
+            ],
+            "time": "2018-11-21T16:09:11+00:00"
+        },
+        {
             "name": "phpmailer/phpmailer",
             "version": "v6.0.6",
             "source": {
@@ -585,12 +643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sylvainjule/kirby-locator.git",
-                "reference": "772abba48d391415748857c12a0aa047f10fbb79"
+                "reference": "8b770b41539046950f37b62aef4320f38caabe56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sylvainjule/kirby-locator/zipball/772abba48d391415748857c12a0aa047f10fbb79",
-                "reference": "772abba48d391415748857c12a0aa047f10fbb79",
+                "url": "https://api.github.com/repos/sylvainjule/kirby-locator/zipball/8b770b41539046950f37b62aef4320f38caabe56",
+                "reference": "8b770b41539046950f37b62aef4320f38caabe56",
                 "shasum": ""
             },
             "type": "kirby-plugin",
