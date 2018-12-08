@@ -19,17 +19,6 @@ class StationPage extends Kirby\Cms\Page
         return Db::delete('stations', ['uid' => $this->uid()]);
     }
 
-    // Location
-    public function location()
-    {
-        $location = [
-            $this->geolat()->float(),
-            $this->geolng()->float()
-        ];
-
-        return implode(',', $location);
-    }
-
     // Trainline slug
     public function trainline()
     {

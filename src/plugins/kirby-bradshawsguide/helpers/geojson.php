@@ -5,10 +5,10 @@
 function generateLineString($pages)
 {
     foreach ($pages as $page) {
-        if ($page->geolng() && $page->geolat()) {
+        if ($location = $page->location()->toLocation()) {
             $coords[] = [
-                $page->geolng()->float(),
-                $page->geolat()->float()
+                $location->lon()->float(),
+                $location->lat()->float()
             ];
         }
     }
@@ -25,12 +25,12 @@ function generateLineString($pages)
 // $page = StationPage
 function generatePoint($page)
 {
-    if ($page->geolng()) {
+    if ($location = $page->location()->toLocation()) {
         $point = [
             'type' => 'Point',
             'coordinates' => [
-                $page->geolng()->float(),
-                $page->geolat()->float()
+                $location->lon()->float(),
+                $location->lat()->float()
             ]
         ];
 
