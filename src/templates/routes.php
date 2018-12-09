@@ -17,26 +17,26 @@ snippet('head', [
     'alternate' => $page->url().'.geojson'.'/section:'.param('section')
 ]);
 
-snippet('common/header', [
+snippet('header', [
     'title' => $page->title(),
     'modifiers' => ['index']
 ]);
 
-snippet('common/tablist', [
+snippet('tablist', [
     'title' => 'Sections',
     'paramName' => 'section',
     'currentURL' => '/routes/section:'.param('section'),
     'tabs' => $site->find('sections')->children()
 ]);
 
-snippet('common/page/content', [
+snippet('page/content', [
     'content' => $section->text(),
     'proseModifiers' => ['centered'],
     'editable' => false
 ]);
 
 if (size($routes)) {
-    snippet('common/switch', [
+    snippet('switch', [
         'title' => 'Change view',
         'queryName' => 'view',
         'switches' => [[
@@ -49,16 +49,16 @@ if (size($routes)) {
     ]);
 
     if (get('view') == 'map') {
-        snippet('common/map', [
+        snippet('map', [
             'url' => $page->uri().'.geojson/'.$kirby->request()->url()->params(),
             'title' => 'Routes plotted on a map',
             'modifiers' => ['cover']
         ]);
     } else {
-        snippet('common/section/list', [
+        snippet('section/list', [
             'title' => 'Featured routes',
             'items' => $featured->filterBy('section', param('section')),
-            'component' => 'common/feature',
+            'component' => 'feature',
             'display' => 'grid'
         ]);
 
@@ -66,10 +66,10 @@ if (size($routes)) {
             $items = $company->routes()->filterBy('section', param('section'));
 
             if (size($items)) {
-                snippet('common/section/list', [
+                snippet('section/list', [
                     'title' => Html::a($company->url(), $company->title()),
                     'items' => $items,
-                    'component' => 'common/route-item'
+                    'component' => 'route-item'
                 ]);
             }
         }

@@ -1,9 +1,9 @@
 <?php
 snippet('head');
 
-snippet('common/header');
+snippet('header');
 
-snippet('common/page/content', [
+snippet('page/content', [
     'editable' => false
 ]);
 

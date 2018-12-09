@@ -1,7 +1,7 @@
 <?php
 snippet('head');
 
-snippet('common/header', [
+snippet('header', [
     'title' => 'Stations A-Z',
     'modifiers' => ['index']
 ]);
@@ -9,7 +9,7 @@ snippet('common/header', [
 $stations = $page->children()->sortBy('title', 'asc');
 
 foreach (alphabetise($stations) as $letter => $items) {
-    snippet('common/index', [
+    snippet('index', [
         'items' => $items,
         'letter' => $letter,
         'listAs' => 'columns'

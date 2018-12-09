@@ -1,25 +1,25 @@
 <?php
 snippet('head');
 
-snippet('common/traverse');
+snippet('traverse');
 
-snippet('common/header', [
+snippet('header', [
     'pretitle' => 'A descriptive guide to',
     'title' => $page->title(),
     'modifiers' => ['index']
 ]);
 
 if ($page->text()->isNotEmpty()) {
-    snippet('common/page/content', [
+    snippet('page/content', [
         'proseModifiers' => ['centered']
     ]);
 }
 
 if (size($page->featured())) {
-    snippet('common/section/list', [
+    snippet('section/list', [
         'title' => 'Featured places',
         'items' => $page->featured(),
-        'component' => 'common/feature',
+        'component' => 'feature',
         'display' => 'grid'
     ]);
 };
@@ -27,7 +27,7 @@ if (size($page->featured())) {
 if ($page->uid() != 'channel-islands') {
     $items = $page->children();
     if (size($items)) {
-        snippet('common/section/list', [
+        snippet('section/list', [
             'title' => $page->listTitle(),
             'items' => $items,
             'display' => 'columns'

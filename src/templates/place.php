@@ -3,26 +3,26 @@ snippet('head', [
     'alternate' => $page->url().'.geojson'
 ]);
 
-snippet('common/header', [
+snippet('header', [
     'parent' => Html::a($page->parent()->url(), $page->parent()->title()),
     'title' => $page->title(),
     'subtitle' => $page->subtitle()
 ]);
 
 if ($image = $page->image('cover.jpg')) {
-    snippet('common/figure/cover', [
+    snippet('figure/cover', [
         'image' => $image
     ]);
 }
 
-snippet('common/page/content');
+snippet('page/content');
 
 // if (size($page->nearby()) {
-//     snippet('common/section/list', [
+//     snippet('section/list', [
 //         'title' => 'Places nearby',
 //         'modifiers' => ['offset'],
 //         'items' => $page->nearby(),
-//         'component' => 'common/feature',
+//         'component' => 'feature',
 //         'display' => 'grid'
 //     ]);
 // }

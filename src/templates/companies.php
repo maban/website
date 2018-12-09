@@ -1,7 +1,7 @@
 <?php
 snippet('head');
 
-snippet('common/header', [
+snippet('header', [
     'title' => $page->title(),
     'modifiers' => ['index']
 ]);
@@ -9,7 +9,7 @@ snippet('common/header', [
 $companies = $page->children()->sortBy('title', 'asc');
 
 foreach (alphabetise($companies) as $letter => $items) {
-    snippet('common/index', [
+    snippet('index', [
         'items' => $items,
         'letter' => $letter
     ]);

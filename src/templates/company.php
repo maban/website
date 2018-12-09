@@ -3,32 +3,32 @@ snippet('head', [
     'alternate' => $page->url().'.geojson'
 ]);
 
-snippet('common/header', [
+snippet('header', [
     'parent' => Html::a($page->parent()->url(), $page->parent()->title()),
     'title' => $page->title()
 ]);
 
-snippet('common/page/content');
+snippet('page/content');
 
-snippet('common/section/list', [
+snippet('section/list', [
     'title' => 'Routes operated',
     'items' => $page->routes(),
-    'component' => 'common/route-item'
+    'component' => 'route-item'
 ]);
 
-snippet('common/map', [
+snippet('map', [
     'url' => $page->uri().'.geojson',
     'title' => 'Network map',
     'modifiers' => ['cover']
 ]);
 
-snippet('common/section/list', [
+snippet('section/list', [
     'title' => 'All stations',
     'items' => $page->stations(),
     'display' => 'columns'
 ]);
 
-snippet('common/section/text', [
+snippet('section/text', [
     'title' => 'Further reading',
     'text' => $page->links()
 ]);

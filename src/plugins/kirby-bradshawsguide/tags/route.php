@@ -3,7 +3,7 @@
 return [
     'html' => function ($tag) {
         if ($route = page('routes/'.$tag->value())) {
-            return snippet('common/route', [
+            return snippet('route', [
                 'route' => $route
             ], true);
         }

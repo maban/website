@@ -9,7 +9,7 @@ return [
         }
 
         if ($items->count()) {
-            return snippet('scopes/navigation', [
+            return snippet('scope/navigation', [
                 'items' => $items
             ], true);
         }

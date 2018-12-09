@@ -2,7 +2,7 @@
 
 return [
     'html' => function ($tag) {
-        return snippet('scopes/distances', [
+        return snippet('scope/distances', [
             'title' => $tag->attr('title', 'Distances of Places from the Station'),
             'distances' => $tag->parent()->distances()->yaml()
         ], true);

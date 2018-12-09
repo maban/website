@@ -10,7 +10,7 @@ $kirby = new Kirby([
         'root' => $root = dirname(__DIR__),
         'site' => $root.'/src',
         'content' => $root.'/src/content',
-        'snippets' => $root.'/src/patterns'
+        'snippets' => $root.'/src/patterns/components'
     ]
 ]);
 
