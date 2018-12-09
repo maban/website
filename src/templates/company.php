@@ -30,7 +30,7 @@ snippet('common/section/list', [
 
 snippet('common/section/text', [
     'title' => 'Further reading',
-    'text' => '(wikipedia: '.urlencode($page->wikipedia()).')'
+    'text' => $page->links()
 ]);
 
 snippet('foot');

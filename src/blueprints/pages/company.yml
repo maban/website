@@ -8,10 +8,3 @@ columns:
     sections:
       common:
         extends: sections/common
-      wikipedia:
-        type: fields
-        fields:
-          wikipedia:
-            label: Wikipedia
-            type: text
-            before: en.wikipedia.org/wiki/

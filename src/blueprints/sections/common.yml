@@ -16,8 +16,4 @@ fields:
       value: "{{ page.uid }}"
   links:
     label: Links
-    type: structure
-    fields:
-      text:
-        label: Text
-        type: text
+    type: textarea
